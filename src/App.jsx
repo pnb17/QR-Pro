@@ -96,7 +96,10 @@ const applyPreset = (name) => {
   const [contactEmail, setContactEmail] = useState("");
   const [contactWebsite, setContactWebsite] = useState("");
 
-  // SMS
+  // Email
+const [emailSubject, setEmailSubject] = useState("");
+const [emailMessage, setEmailMessage] = useState("");
+// SMS
   const [smsNumber, setSmsNumber] = useState("");
   const [smsMessage, setSmsMessage] = useState("");
 
@@ -128,10 +131,30 @@ const applyPreset = (name) => {
       }
 
       case "email": {
-        if (!value.trim()) return "";
-        return `mailto:${value.trim()}`;
-      }
+  if (!value.trim()) return "";
 
+  const email = value.trim();
+  const subject = emailSubject.trim();
+  const message = emailMessage.trim();
+
+  let mailto = `mailto:${email}`;
+
+  const params = [];
+
+  if (subject) {
+    params.push(`subject=${encodeURIComponent(subject)}`);
+  }
+
+  if (message) {
+    params.push(`body=${encodeURIComponent(message)}`);
+  }
+
+  if (params.length > 0) {
+    mailto += `?${params.join("&")}`;
+  }
+
+  return mailto;
+}
       case "phone": {
   if (!value.trim()) return "";
 
@@ -906,6 +929,46 @@ const getDefaultLabel = (qrType) => {
 
           </div>
         );
+              case "email":
+        return (
+          <div className="extra-fields">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              value={value}
+              onChange={(e) =>
+                setValue(e.target.value)
+              }
+              placeholder="example@email.com"
+            />
+
+            <label>Email Subject</label>
+
+            <input
+              type="text"
+              value={emailSubject}
+              onChange={(e) =>
+                setEmailSubject(e.target.value)
+              }
+              placeholder="e.g. QRForge Test"
+            />
+
+            <label>Email Message</label>
+
+            <textarea
+              value={emailMessage}
+              onChange={(e) =>
+                setEmailMessage(e.target.value)
+              }
+              placeholder="Enter your message..."
+              rows="5"
+            />
+
+          </div>
+        );
+
 
       case "contact":
         return (
