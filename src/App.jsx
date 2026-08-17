@@ -378,18 +378,36 @@ const selectTemplate = (templateType) => {
   // Delete History Item
   // ==============================
 
-  const deleteHistoryItem = (id) => {
-    const updatedHistory = history.filter(
-      (item) => item.id !== id
+ const deleteHistoryItem = (id) => {
+  const itemToDelete = history.find(
+    (item) => item.id === id
+  );
+
+  const updatedHistory = history.filter(
+    (item) => item.id !== id
+  );
+
+  setHistory(updatedHistory);
+
+  localStorage.setItem(
+    "qrHistory",
+    JSON.stringify(updatedHistory)
+  );
+
+  // Remove the same QR from Favorites
+  if (itemToDelete) {
+    const updatedFavorites = favorites.filter(
+      (favorite) => favorite.value !== itemToDelete.value
     );
 
-    setHistory(updatedHistory);
+    setFavorites(updatedFavorites);
 
     localStorage.setItem(
-      "qrHistory",
-      JSON.stringify(updatedHistory)
+      "qrFavorites",
+      JSON.stringify(updatedFavorites)
     );
-  };
+  }
+};
   const toggleFavorite = (item) => {
   const exists = favorites.some(
     (favorite) => favorite.value === item.value
