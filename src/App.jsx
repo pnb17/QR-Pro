@@ -587,6 +587,9 @@ const selectTemplate = (templateType) => {
 // ==============================
 // Download PDF
 // ==============================
+// ==============================
+// Download PDF
+// ==============================
 const downloadPDF = () => {
   const qrContainer = document.querySelector(".qr-result");
 
@@ -596,44 +599,73 @@ const downloadPDF = () => {
 
   if (!svg) return;
 
-  const svgData = new XMLSerializer().serializeToString(svg);
+  const svgData =
+    new XMLSerializer().serializeToString(svg);
 
+  // High-resolution PDF source
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
-  const size = 1200;
+  if (!ctx) return;
 
-  canvas.width = size;
-  canvas.height = showQrLabel && qrLabel.trim()
-    ? 1350
-    : 1200;
+  const width = 2400;
+  const height =
+    showQrLabel && qrLabel.trim()
+      ? 2700
+      : 2400;
 
+  canvas.width = width;
+  canvas.height = height;
+
+  // Background
   ctx.fillStyle = bgColor;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
   const img = new Image();
 
   img.onload = () => {
-    const qrSize = 1000;
-    const x = (canvas.width - qrSize) / 2;
-    const y = 50;
+    // High-resolution QR
+    const qrSize = 2000;
 
-    ctx.drawImage(img, x, y, qrSize, qrSize);
+    const x =
+      (canvas.width - qrSize) / 2;
 
-    if (showQrLabel && qrLabel.trim()) {
+    const y = 100;
+
+    ctx.drawImage(
+      img,
+      x,
+      y,
+      qrSize,
+      qrSize
+    );
+
+    // QR Label
+    if (
+      showQrLabel &&
+      qrLabel.trim()
+    ) {
       ctx.fillStyle = qrColor;
-      ctx.font = "bold 42px Arial";
+      ctx.font = "bold 96px Arial";
       ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
 
       ctx.fillText(
         qrLabel.trim(),
         canvas.width / 2,
-        1120
+        2260
       );
     }
 
-    const imageData = canvas.toDataURL("image/png");
+    const imageData =
+      canvas.toDataURL("image/png");
 
+    // A4 PDF
     const pdf = new jsPDF({
       orientation: "portrait",
       unit: "mm",
@@ -644,11 +676,17 @@ const downloadPDF = () => {
     const pageHeight = 297;
 
     const pdfWidth = 170;
-    const pdfHeight =
-      canvas.height / canvas.width * pdfWidth;
 
-    const xPdf = (pageWidth - pdfWidth) / 2;
-    const yPdf = (pageHeight - pdfHeight) / 2;
+    const pdfHeight =
+      (canvas.height /
+        canvas.width) *
+      pdfWidth;
+
+    const xPdf =
+      (pageWidth - pdfWidth) / 2;
+
+    const yPdf =
+      (pageHeight - pdfHeight) / 2;
 
     pdf.addImage(
       imageData,
@@ -662,6 +700,12 @@ const downloadPDF = () => {
     pdf.save("qr-code.pdf");
   };
 
+  img.onerror = () => {
+    alert(
+      "Unable to create QR PDF."
+    );
+  };
+
   img.src =
     "data:image/svg+xml;charset=utf-8," +
     encodeURIComponent(svgData);
@@ -671,15 +715,21 @@ const downloadPDF = () => {
   // Download PNG / JPG
   // ==============================
 
-  const downloadImage = (format) => {
+ const downloadImage = (format) => {
   const qrContainer = document.querySelector(".qr-result");
 
   if (!qrContainer) return;
 
-  const width = 1200;
-  const height = showQrLabel && qrLabel.trim()
-    ? 1350
-    : 1200;
+  const svg = qrContainer.querySelector("#qr-code");
+
+  if (!svg) return;
+
+  // High-resolution export
+  const width = 2400;
+  const height =
+    showQrLabel && qrLabel.trim()
+      ? 2700
+      : 2400;
 
   const canvas = document.createElement("canvas");
 
@@ -694,26 +744,30 @@ const downloadPDF = () => {
   ctx.fillStyle = bgColor;
   ctx.fillRect(0, 0, width, height);
 
-  const svg = qrContainer.querySelector("#qr-code");
-
-  if (!svg) return;
-
+  // Convert SVG to image
   const source =
     new XMLSerializer().serializeToString(svg);
 
-  const svgBlob = new Blob([source], {
-    type: "image/svg+xml;charset=utf-8",
-  });
+  const svgBlob = new Blob(
+    [source],
+    {
+      type: "image/svg+xml;charset=utf-8",
+    }
+  );
 
-  const url = URL.createObjectURL(svgBlob);
+  const url =
+    URL.createObjectURL(svgBlob);
 
   const image = new Image();
 
   image.onload = () => {
-    const qrDrawSize = 1000;
+    // High-resolution QR
+    const qrDrawSize = 2000;
 
-    const x = (width - qrDrawSize) / 2;
-    const y = 50;
+    const x =
+      (width - qrDrawSize) / 2;
+
+    const y = 100;
 
     ctx.drawImage(
       image,
@@ -726,14 +780,14 @@ const downloadPDF = () => {
     // QR Label
     if (showQrLabel && qrLabel.trim()) {
       ctx.fillStyle = qrColor;
-      ctx.font = "bold 48px Arial";
+      ctx.font = "bold 96px Arial";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
       ctx.fillText(
         qrLabel.trim(),
         width / 2,
-        1130
+        2260
       );
     }
 
@@ -747,18 +801,24 @@ const downloadPDF = () => {
         ? "png"
         : "jpg";
 
-    const imageURL = canvas.toDataURL(
-      mimeType,
-      0.95
-    );
+    const imageURL =
+      canvas.toDataURL(
+        mimeType,
+        0.95
+      );
 
-    const link = document.createElement("a");
+    const link =
+      document.createElement("a");
 
     link.href = imageURL;
-    link.download = `qr-code.${extension}`;
+
+    link.download =
+      `qr-code.${extension}`;
 
     document.body.appendChild(link);
+
     link.click();
+
     document.body.removeChild(link);
 
     URL.revokeObjectURL(url);
@@ -766,7 +826,10 @@ const downloadPDF = () => {
 
   image.onerror = () => {
     URL.revokeObjectURL(url);
-    alert("Unable to create QR image.");
+
+    alert(
+      "Unable to create QR image."
+    );
   };
 
   image.src = url;
