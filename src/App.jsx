@@ -449,44 +449,47 @@ const selectTemplate = (templateType) => {
     localStorage.removeItem("qrHistory");
   };
 
-  // ==============================
-  // Logo Upload
-  // ==============================
+ // ==============================
+// Logo Upload
+// ==============================
 
-  const handleLogoUpload = (event) => {
-    const file = event.target.files?.[0];
+const handleLogoUpload = (event) => {
+  const file = event.target.files?.[0];
 
-    if (!file) return;
+  if (!file) return;
 
-    if (!file.type.startsWith("image/")) {
-      alert("Please select an image file.");
-      return;
-    }
+  if (!file.type.startsWith("image/")) {
+    alert("Please select an image file.");
+    event.target.value = "";
+    return;
+  }
 
-    const reader = new FileReader();
+  // Maximum logo size: 2 MB
+  const maxSize = 2 * 1024 * 1024;
 
-    reader.onload = () => {
-      setLogo(reader.result);
-    };
+  if (file.size > maxSize) {
+    alert("Logo image must be smaller than 2 MB.");
+    event.target.value = "";
+    return;
+  }
 
-    reader.readAsDataURL(file);
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    setLogo(reader.result);
   };
 
-  const removeLogo = () => {
-    setLogo("");
+  reader.onerror = () => {
+    alert("Unable to read the logo image.");
+    event.target.value = "";
   };
 
-  // ==============================
-  // Get SVG
-  // ==============================
+  reader.readAsDataURL(file);
+};
 
-  const getSVG = () => {
-    const svg = document.getElementById("qr-code");
-
-    if (!svg) return null;
-
-    return new XMLSerializer().serializeToString(svg);
-  };
+const removeLogo = () => {
+  setLogo("");
+};
 
   // ==============================
   // Download SVG
