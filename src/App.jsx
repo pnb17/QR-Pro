@@ -4,6 +4,8 @@ import { QRCodeSVG } from "qrcode.react";
 import "./App.css";
 
 function App() {
+    // Legal / Information Pages
+  const [activeInfoPage, setActiveInfoPage] = useState(null);
   const [type, setType] = useState("text");
   const [value, setValue] = useState("");
   const [qrValue, setQrValue] = useState("");
@@ -1189,7 +1191,7 @@ const getDefaultLabel = (qrType) => {
             QR
           </div>
 
-          <span>QR Pro</span>
+          <span>QRForge</span>
 
         </div>
 
@@ -2035,14 +2037,272 @@ const getDefaultLabel = (qrType) => {
 
     </div>
 
+    </section>
+)}
+
+{/* ================= INFO / LEGAL PAGES ================= */}
+
+{activeInfoPage && (
+  <section className="info-page">
+    <div className="info-page-card">
+
+      <div className="info-page-header">
+        <h2>
+          {activeInfoPage === "about" && "About QRForge"}
+          {activeInfoPage === "privacy" && "Privacy Policy"}
+          {activeInfoPage === "terms" && "Terms of Use"}
+        </h2>
+
+        
+      </div>
+
+      {activeInfoPage === "about" && (
+        <div className="info-page-content">
+        
+          <p className="info-tagline">
+  Create. Customize. Share.
+</p>
+
+<p>
+  QRForge is a fast, simple, and privacy-friendly QR code generator
+  designed to make creating professional QR codes effortless.
+</p>
+
+<p>
+  Create QR codes for websites, WhatsApp, Wi-Fi networks, email,
+  phone numbers, SMS, locations, contact details, and more — all
+  directly from your browser.
+</p>
+
+<p>
+  Personalize your QR codes with custom colors, backgrounds, logos,
+  labels, frame styles, and error correction settings. When your QR
+  code is ready, download it in high-quality PNG, JPG, SVG, or PDF
+  format for digital or print use.
+</p>
+
+<p>
+  QRForge is built with privacy in mind. Your QR code content is
+  processed in your browser, helping you create and customize QR
+  codes quickly without unnecessary complexity.
+</p>
+        </div>
+      )}
+
+      {activeInfoPage === "privacy" && (
+        <div className="info-page-content">
+          <p className="policy-updated">
+  Last updated: August 22, 2026
+</p>
+         <p>
+  At QRForge, your privacy is important to us. QRForge is designed to
+  create and customize QR codes directly in your browser, allowing you
+  to use the core QR generation features without creating an account.
+</p>
+
+<h3>Local Data Processing</h3>
+
+<p>
+  QR code content you enter, including URLs, text, Wi-Fi details,
+  contact information, phone numbers, email addresses, SMS content,
+  and other QR data, is processed locally in your browser for QR code
+  generation.
+</p>
+
+<h3>QR History and Favorites</h3>
+
+<p>
+  Your recently generated QR codes and favorites may be stored locally
+  on your device using your browser's localStorage. This information
+  remains in your browser and can be removed by clearing your QR
+  history, favorites, or browser storage.
+</p>
+
+<h3>Uploaded Logos</h3>
+
+<p>
+  Images or logos you select for QR code customization are processed
+  in your browser as part of the QR creation process. QRForge does not
+  intentionally upload these files to a server for QR generation.
+</p>
+
+<h3>Cookies and Analytics</h3>
+
+<p>
+  QRForge currently does not require cookies for its core QR code
+  generation features. If analytics, advertising, or other third-party
+  services are introduced in the future, this Privacy Policy will be
+  updated to explain how those services may collect or process data.
+</p>
+
+<h3>Third-Party Links</h3>
+
+<p>
+  QRForge may contain links to third-party websites or services. We are
+  not responsible for the privacy practices, content, or policies of
+  those third-party services.
+</p>
+
+<h3>Changes to This Privacy Policy</h3>
+
+<p>
+  We may update this Privacy Policy from time to time as QRForge
+  develops or new features are introduced. Any updates will be reflected
+  on this page.
+</p>
+        </div>
+      )}
+
+      {activeInfoPage === "terms" && (
+        <div className="info-page-content">
+          <p className="policy-updated">
+  Last updated: August 22, 2026
+</p>
+
+<p>
+  Welcome to QRForge. By accessing or using QRForge, you agree to these
+  Terms of Use. Please read them carefully before using the service.
+</p>
+
+<h3>Use of QRForge</h3>
+
+<p>
+  QRForge provides tools for creating, customizing, and downloading QR
+  codes for personal, educational, business, and other lawful purposes.
+  You may use the service without creating an account.
+</p>
+
+<h3>User Responsibility</h3>
+
+<p>
+  You are responsible for the information, links, contact details,
+  images, logos, and other content you use to create QR codes. You should
+  verify the accuracy of your QR code and test it before printing,
+  publishing, distributing, or using it commercially.
+</p>
+
+<h3>Prohibited Use</h3>
+
+<p>
+  You must not use QRForge to create or distribute QR codes containing
+  unlawful, fraudulent, deceptive, harmful, malicious, or unauthorized
+  content. You must also respect applicable laws and the intellectual
+  property, privacy, and other rights of third parties.
+</p>
+
+<h3>QR Code Accuracy and Compatibility</h3>
+
+<p>
+  QRForge is designed to generate functional QR codes, but successful
+  scanning may depend on factors such as QR size, colors, contrast,
+  embedded logos, error correction settings, printing quality, scanning
+  devices, and QR reader applications. We recommend testing every QR
+  code before final use.
+</p>
+
+<h3>Intellectual Property</h3>
+
+<p>
+  QRForge and its website design, branding, interface, and original
+  website content are protected by applicable intellectual property
+  laws. Content that you enter or upload remains your responsibility,
+  and you should only use content that you have the right to use.
+</p>
+
+<h3>Service Availability</h3>
+
+<p>
+  We may update, improve, modify, suspend, or discontinue features of
+  QRForge at any time. We do not guarantee that every feature will
+  always be available or operate without interruption.
+</p>
+
+<h3>Disclaimer</h3>
+
+<p>
+  QRForge is provided on an "as is" and "as available" basis. While we
+  aim to provide a reliable and useful QR code generation service, we do
+  not guarantee that the service will always be error-free,
+  uninterrupted, or suitable for every particular purpose.
+</p>
+
+<h3>Limitation of Liability</h3>
+
+<p>
+  To the extent permitted by applicable law, QRForge will not be liable
+  for indirect, incidental, special, or consequential losses arising
+  from the use of the service, generated QR codes, unavailable features,
+  incorrect user-provided information, or third-party content.
+</p>
+
+<h3>Third-Party Services</h3>
+
+<p>
+  QRForge may contain links to or interact with third-party websites,
+  applications, or services. We are not responsible for the content,
+  availability, security, terms, or practices of those third parties.
+</p>
+
+<h3>Changes to These Terms</h3>
+
+<p>
+  We may update these Terms of Use as QRForge develops or new features
+  are introduced. Updated terms will be published on this page with a
+  revised "Last updated" date. Continued use of QRForge after an update
+  means that the revised terms apply to your continued use of the
+  service.
+</p>
+        </div>
+      )}
+<button
+          type="button"
+          className="info-close-btn"
+          onClick={() => setActiveInfoPage(null)}
+        >
+          Close
+        </button>
+    </div>
   </section>
 )}
-      <footer>
-        © 2026 QR Pro — Free QR Code Generator
-      </footer>
+
+{/* ================= FOOTER ================= */}
+
+<footer>
+  <div className="footer-content">
+    <p>© 2026 QRForge — Free QR Code Generator</p>
+
+    <div className="footer-links">
+
+      <button
+        type="button"
+        onClick={() => setActiveInfoPage("about")}
+      >
+        About
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setActiveInfoPage("privacy")}
+      >
+        Privacy Policy
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setActiveInfoPage("terms")}
+      >
+        Terms of Use
+      </button>
+
+    </div>
+  </div>
+</footer>
 
     </div>
   );
 }
 
 export default App;
+
+   
+    

@@ -4,7 +4,14 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   background: #f4f7ff;
   color: #172033;
 }
@@ -1218,4 +1225,296 @@ footer {
     padding-left: 12px;
     padding-right: 12px;
   }
+}
+/* ================= INFO / LEGAL PAGES ================= */
+
+.info-page {
+  width: min(1120px, 92%);
+  margin: 35px auto 25px;
+}
+
+.info-page-card {
+  background: #ffffff;
+  border: 1px solid #e2e7f1;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(35, 61, 110, 0.06);
+}
+
+.info-page-header {
+  margin-bottom: 18px;
+}
+
+.info-page-header h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #172033;
+}
+
+.info-page-content {
+  color: #4f5f78;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.info-page-content p {
+  margin: 0 0 14px;
+}
+
+.info-page-content p:last-child {
+  margin-bottom: 0;
+}
+
+.info-page-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #edf0f5;
+}
+
+.info-close-btn {
+  background: #2855c5;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.info-close-btn:hover {
+  background: #2149ad;
+}
+
+/* ================= FOOTER LINKS ================= */
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-links button {
+  background: transparent;
+  color: #2855c5;
+  padding: 6px 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-links button:hover {
+  background: #eef3ff;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .info-page {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .info-page-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .info-page-header h2 {
+    font-size: 21px;
+  }
+
+  .info-page-content {
+    font-size: 14px;
+  }
+
+  .info-page-actions {
+    margin-top: 20px;
+  }
+
+  .info-close-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .footer-links {
+    gap: 4px;
+  }
+}
+/* ================= FINAL FONT IMPROVEMENTS ================= */
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.info-page-header h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #172033;
+}
+
+.info-page-content {
+  color: #4f5f78;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.info-page-content p {
+  margin: 0 0 16px;
+}
+
+.footer-content {
+  font-size: 13px;
+}
+
+.footer-links button {
+  background: transparent;
+  color: #2855c5;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+/* ================= ABOUT / LEGAL CONTENT POLISH ================= */
+
+.info-page-card {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 34px 38px;
+}
+
+.info-page-header {
+  margin-bottom: 22px;
+}
+
+.info-page-header h2 {
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.info-page-content {
+  max-width: 850px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.info-page-content p {
+  margin: 0 0 14px;
+}
+
+.info-page-actions {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 850px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #edf0f5;
+}
+
+.info-close-btn {
+  min-width: 95px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .info-page-card {
+    padding: 24px 20px;
+  }
+
+  .info-page-header {
+    margin-bottom: 18px;
+  }
+
+  .info-page-header h2 {
+    font-size: 22px;
+  }
+
+  .info-page-content {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .info-page-actions {
+    margin-top: 20px;
+  }
+
+  .info-close-btn {
+    width: 100%;
+  }
+}
+/* About / Legal text spacing fix */
+
+.info-page-content {
+  line-height: 1.6;
+}
+
+.info-page-content p {
+  margin: 0 0 8px;
+}
+
+.info-page-content p:last-child {
+  margin-bottom: 0;
+}
+
+.info-page-actions {
+  margin-top: 16px;
+  padding-top: 14px;
+}
+/* About tagline */
+.info-tagline {
+  color: #2855c5;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0 0 16px !important;
+}
+
+/* Better paragraph spacing */
+.info-page-content p:not(.info-tagline) {
+  margin-bottom: 12px;
+}
+
+/* More breathing space before Close */
+.info-page-actions {
+  margin-top: 20px;
+}
+.info-page-content h3 {
+  margin: 20px 0 7px;
+  color: #172033;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.info-page-content h3:first-child {
+  margin-top: 0;
+}
+.policy-updated {
+  margin: -4px 0 22px !important;
+  color: #8a94a7;
+  font-size: 13px;
+  font-weight: 500;
 }
