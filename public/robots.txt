@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qrforge.in/sitemap.xml
+Sitemap: https://www.qrforge.in/sitemap.xml
