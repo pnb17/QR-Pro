@@ -93,7 +93,7 @@ select {
 .hero p {
   margin: auto;
   max-width: 650px;
-  color: #68748a;
+  color: #566176;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -318,7 +318,7 @@ button:hover {
 }
 
 .qr-empty {
-  color: #8791a5;
+  color: #5f6b80;
 }
 
 .qr-placeholder-icon {
@@ -400,7 +400,7 @@ button:hover {
 
 .feature p {
   margin: 0;
-  color: #727d91;
+  color: #5f6b80;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -412,7 +412,7 @@ footer {
   padding: 24px;
   background: #ffffff;
   border-top: 1px solid #e5e9f2;
-  color: #7a8497;
+  color: #5f6b80;
   font-size: 13px;
 }
 
@@ -665,7 +665,7 @@ footer {
 
 .templates-subtitle {
   margin: 0 0 22px;
-  color: #727d91;
+  color: #5f6b80;
   font-size: 15px;
 }
 
@@ -700,7 +700,7 @@ footer {
 }
 
 .template-btn small {
-  color: #7a8497;
+  color: #5f6b80;
   font-size: 12px;
 }
 

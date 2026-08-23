@@ -1326,6 +1326,7 @@ const getDefaultLabel = (qrType) => {
             <label>QR Code Type</label>
 
             <select
+            aria-label="QR code type"
               value={type}
              onChange={(e) => {
   const newType = e.target.value;
@@ -1549,6 +1550,7 @@ const getDefaultLabel = (qrType) => {
                 type="file"
                 accept="image/*"
                 onChange={handleLogoUpload}
+                aria-label="QR code size"
               />
 
               {logo && (
@@ -1606,6 +1608,7 @@ const getDefaultLabel = (qrType) => {
                   onChange={(e) =>
                     setQrColor(e.target.value)
                   }
+                  aria-label="QR code color"
                 />
 
               </div>
@@ -1621,6 +1624,7 @@ const getDefaultLabel = (qrType) => {
                   onChange={(e) =>
                     setBgColor(e.target.value)
                   }
+                  aria-label="QR code background color"
                 />
 
               </div>
@@ -1642,6 +1646,7 @@ const getDefaultLabel = (qrType) => {
                   Number(e.target.value)
                 )
               }
+              aria-label="QR code size"
             />
 
 
@@ -1649,12 +1654,13 @@ const getDefaultLabel = (qrType) => {
               Error Correction
             </label>
 
-            <select
-              value={errorLevel}
-              onChange={(e) =>
-                setErrorLevel(e.target.value)
-              }
-            >
+           <select
+  aria-label="QR code error correction level"
+  value={errorLevel}
+  onChange={(e) =>
+    setErrorLevel(e.target.value)
+  }
+>
 
               <option value="L">
                 Low — 7%
