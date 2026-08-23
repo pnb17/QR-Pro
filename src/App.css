@@ -1640,3 +1640,42 @@ body {
     font-size: 14px;
   }
 }
+/* ================= WHATSAPP GENERATOR PAGE ================= */
+
+.whatsapp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.whatsapp-generator,
+.whatsapp-preview {
+  min-height: 100%;
+}
+
+.whatsapp-preview .qr-box {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-link-preview {
+  margin-top: 14px;
+  text-align: center;
+  color: #566176;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+@media (max-width: 800px) {
+  .whatsapp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-preview .qr-box {
+    min-height: 300px;
+  }
+}
