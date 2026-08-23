@@ -2,12 +2,20 @@ import { useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 function WhatsAppQRPage() {
-  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("91");
+const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const cleanPhone = phone.replace(/\D/g, "");
+  const cleanPhone =
+  countryCode.replace(/\D/g, "") +
+  phone.replace(/\D/g, "");const localPhone = phone.replace(/\D/g, "");
 
-  const whatsappUrl = cleanPhone
+const isValidPhone =
+  countryCode === "91"
+    ? localPhone.length === 10
+    : localPhone.length >= 7 &&
+      localPhone.length <= 15;
+ const whatsappUrl = isValidPhone && cleanPhone
     ? `https://wa.me/${cleanPhone}${
         message.trim()
           ? `?text=${encodeURIComponent(message.trim())}`
@@ -44,17 +52,35 @@ function WhatsAppQRPage() {
           <h2>Create WhatsApp QR Code</h2>
 
           <label htmlFor="wa-phone">
-            WhatsApp Phone Number
-          </label>
+  WhatsApp Phone Number
+</label>
 
-          <input
-            id="wa-phone"
-            type="tel"
-            placeholder="919876543210"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
+<div className="phone-input-row">
+  <select
+    aria-label="Country code"
+    value={countryCode}
+    onChange={(e) => setCountryCode(e.target.value)}
+  >
+    <option value="91">🇮🇳 +91 India</option>
+    <option value="1">🇺🇸 +1 USA / Canada</option>
+    <option value="44">🇬🇧 +44 UK</option>
+    <option value="971">🇦🇪 +971 UAE</option>
+    <option value="61">🇦🇺 +61 Australia</option>
+    <option value="65">🇸🇬 +65 Singapore</option>
+  </select>
 
+  <input
+  id="wa-phone"
+  type="tel"
+  inputMode="numeric"
+  placeholder="9876543210"
+  value={phone}
+  maxLength={countryCode === "91" ? 10 : 15}
+  onChange={(e) =>
+    setPhone(e.target.value.replace(/\D/g, ""))
+  }
+/>
+</div>
           <label htmlFor="wa-message">
             Message (Optional)
           </label>

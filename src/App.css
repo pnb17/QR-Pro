@@ -1679,3 +1679,29 @@ body {
     min-height: 300px;
   }
 }
+/* ================= WHATSAPP PHONE INPUT ================= */
+
+.phone-input-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.phone-input-row select,
+.phone-input-row input {
+  width: 100%;
+  min-height: 44px;
+}
+
+@media (max-width: 600px) {
+  .phone-input-row {
+    grid-template-columns: 1fr;
+  }
+}
+.input-error {
+  margin: 6px 0 0;
+  color: #b42318;
+  font-size: 12px;
+  font-weight: 600;
+}
