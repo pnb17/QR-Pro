@@ -318,20 +318,20 @@ button:hover {
 }
 
 .qr-empty {
-  color: #5f6b80;
+  color: #465268;
 }
 
 .qr-placeholder-icon {
   width: 76px;
   height: 76px;
   margin: auto;
-  border: 3px solid #bfc8db;
+  border: 3px solid #9aa6bd;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  color: #7d879b;
+  color: #4b556b;
 }
 
 .qr-empty p {
