@@ -2272,6 +2272,97 @@ const getDefaultLabel = (qrType) => {
     </div>
   </section>
 )}
+{/* ================= SEO CONTENT ================= */}
+
+<section className="seo-content">
+  <h2>Free Online QR Code Generator</h2>
+
+  <p>
+    QRForge is a free online QR code generator that helps you create
+    customizable QR codes quickly and easily. Generate QR codes for
+    websites, WhatsApp, WiFi, email, phone numbers, SMS, locations,
+    contacts and more.
+  </p>
+
+  <h2>What is a QR Code Generator?</h2>
+
+  <p>
+    A QR code generator is an online tool that converts information
+    such as a website URL, text, contact details or WiFi credentials
+    into a scannable QR code. Users can scan the QR code with a
+    smartphone camera to access the information instantly.
+  </p>
+  <h2>How to Create a QR Code</h2>
+
+<ol className="seo-steps">
+  <li>
+    <strong>Choose a QR code type.</strong> Select URL, WhatsApp,
+    WiFi, email, phone, SMS, location, contact or another available
+    option.
+  </li>
+
+  <li>
+    <strong>Enter your information.</strong> Add the content you want
+    people to access when they scan your QR code.
+  </li>
+
+  <li>
+    <strong>Customize your QR code.</strong> Adjust the colors, size,
+    error correction level and add a logo if needed.
+  </li>
+
+  <li>
+    <strong>Generate and test.</strong> Create your QR code and scan it
+    with your phone to make sure it works correctly.
+  </li>
+
+  <li>
+    <strong>Download your QR code.</strong> Save it in your preferred
+    available format and use it online or in print.
+  </li>
+</ol>
+<h2>Frequently Asked Questions</h2>
+
+<div className="seo-faq">
+  <div className="seo-faq-item">
+    <h3>Is QRForge free to use?</h3>
+    <p>
+      Yes. QRForge lets you create and download QR codes online for free.
+    </p>
+  </div>
+
+  <div className="seo-faq-item">
+    <h3>What types of QR codes can I create?</h3>
+    <p>
+      You can create QR codes for URLs, text, WhatsApp, WiFi, email,
+      phone numbers, SMS, locations and contact information.
+    </p>
+  </div>
+
+  <div className="seo-faq-item">
+    <h3>Can I customize my QR code?</h3>
+    <p>
+      Yes. You can customize QR code colors, background, size and error
+      correction level, and you can also add a logo.
+    </p>
+  </div>
+
+  <div className="seo-faq-item">
+    <h3>Do I need to create an account?</h3>
+    <p>
+      No. You can use the QR code generator without creating an account.
+    </p>
+  </div>
+
+  <div className="seo-faq-item">
+    <h3>Should I test my QR code before using it?</h3>
+    <p>
+      Yes. Always scan your QR code with a smartphone before printing
+      or sharing it to make sure the encoded information works correctly.
+    </p>
+  </div>
+</div>
+</section>
 
 {/* ================= FOOTER ================= */}
 
