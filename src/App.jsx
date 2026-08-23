@@ -1207,12 +1207,13 @@ const getDefaultLabel = (qrType) => {
 
         <section className="hero">
 
-          <h1>Create QR Codes Easily</h1>
+          <h1>Free QR Code Generator Online</h1>
 
           <p>
-            Generate professional QR codes and
-            customize them to your needs.
-          </p>
+  Create free QR codes for URLs, WhatsApp, WiFi, email,
+  phone, SMS, locations and contacts. Customize colors,
+  size and logo, then download your QR code instantly.
+</p>
 
         </section>
         <section className="templates">
