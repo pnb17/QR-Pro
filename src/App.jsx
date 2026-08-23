@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { jsPDF } from "jspdf";
+
 import { QRCodeSVG } from "qrcode.react";
 import "./App.css";
 
@@ -613,7 +613,7 @@ const removeLogo = () => {
 // ==============================
 // Download PDF
 // ==============================
-const downloadPDF = () => {
+const downloadPDF = async () => {
   const qrContainer = document.querySelector(".qr-result");
 
   if (!qrContainer) return;
@@ -651,7 +651,7 @@ const downloadPDF = () => {
 
   const img = new Image();
 
-  img.onload = () => {
+  img.onload = async () => {
     // High-resolution QR
     const qrSize = 2000;
 
@@ -689,6 +689,7 @@ const downloadPDF = () => {
       canvas.toDataURL("image/png");
 
     // A4 PDF
+    const { jsPDF } = await import("jspdf");
     const pdf = new jsPDF({
       orientation: "portrait",
       unit: "mm",
