@@ -1724,3 +1724,19 @@ body {
 .tool-page-home-link:hover {
   text-decoration: underline;
 }
+/* ================= URL QR GENERATOR ================= */
+
+.whatsapp-generator #url-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.whatsapp-generator #url-input:focus {
+  outline: none;
+  border-color: #2957b8;
+}

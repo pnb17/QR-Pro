@@ -2297,6 +2297,12 @@ const getDefaultLabel = (qrType) => {
   </a>
   .
 </p>
+<p className="seo-tool-link">
+  Need a website QR?{" "}
+  <a href="/url-qr-code-generator">
+    Create a free URL QR Code
+  </a>.
+</p>
 
   <h2>What is a QR Code Generator?</h2>
 
