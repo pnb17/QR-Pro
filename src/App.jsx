@@ -2303,6 +2303,25 @@ const getDefaultLabel = (qrType) => {
     Create a free URL QR Code
   </a>.
 </p>
+<p className="seo-tool-link">
+  Want to make emailing easier?{" "}
+  <a href="/email-qr-code-generator">
+    Create a free Email QR Code
+  </a>.
+</p>
+<p className="seo-tool-link">
+  Need a QR code for calling?{" "}
+  <a href="/phone-qr-code-generator">
+    Create a free Phone QR Code
+  </a>.
+</p>
+
+<p className="seo-tool-link">
+  Want to create an SMS QR?{" "}
+  <a href="/sms-qr-code-generator">
+    Create a free SMS QR Code
+  </a>.
+</p>
 
   <h2>What is a QR Code Generator?</h2>
 
