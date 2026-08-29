@@ -21,8 +21,24 @@ function WifiQRPage() {
         "Create a free WiFi QR code online with QRForge. Enter your WiFi name, password and security type, then download a scannable QR code instantly."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/wifi-qr-code-generator"
+  );
+}
 
     return () => {
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
       document.title =
         "Free QR Code Generator Online | QRForge";
     };

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 function WhatsAppQRPage() {
+  const [countryCode, setCountryCode] = useState("91");
+const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   useEffect(() => {
   document.title =
     "WhatsApp QR Code Generator – Free Online | QRForge";
@@ -17,21 +20,29 @@ function WhatsAppQRPage() {
     );
   }
 
+  const canonical = document.querySelector(
+    'link[rel="canonical"]'
+  );
+
+  if (canonical) {
+    canonical.setAttribute(
+      "href",
+      "https://www.qrforge.in/whatsapp-qr-code-generator"
+    );
+  }
+
   return () => {
     document.title =
       "Free QR Code Generator Online | QRForge";
 
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
+    if (canonical) {
+      canonical.setAttribute(
+        "href",
+        "https://www.qrforge.in/"
       );
     }
   };
 }, []);
-  const [countryCode, setCountryCode] = useState("91");
-const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
 
   const cleanPhone =
   countryCode.replace(/\D/g, "") +

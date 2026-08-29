@@ -19,6 +19,16 @@ function PhoneQRPage() {
         "Create a free Phone QR code online with QRForge. Enter a phone number, generate a scannable call QR code instantly, and download it as PNG."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/phone-qr-code-generator"
+  );
+}
 
     return () => {
       document.title =
@@ -30,6 +40,12 @@ function PhoneQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 

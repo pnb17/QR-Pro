@@ -20,6 +20,16 @@ function EmailQRPage() {
         "Create a free Email QR code online with QRForge. Add an email address, subject and message, generate your QR code instantly and download it as PNG."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/email-qr-code-generator"
+  );
+}
 
     return () => {
       document.title =
@@ -31,6 +41,12 @@ function EmailQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 

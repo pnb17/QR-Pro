@@ -20,6 +20,16 @@ function SMSQRPage() {
         "Create a free SMS QR code online with QRForge. Add a phone number and optional message, generate your QR code instantly, and download it as PNG."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/sms-qr-code-generator"
+  );
+}
 
     return () => {
       document.title =
@@ -31,6 +41,12 @@ function SMSQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 

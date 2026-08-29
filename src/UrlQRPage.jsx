@@ -18,8 +18,19 @@ function UrlQRPage() {
         "Create a free URL QR code online with QRForge. Enter any website link, generate a scannable QR code instantly, and download it as a PNG image."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/url-qr-code-generator"
+  );
+}
 
     return () => {
+
       document.title =
         "Free QR Code Generator Online | QRForge";
 
@@ -29,6 +40,12 @@ function UrlQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 

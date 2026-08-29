@@ -23,6 +23,16 @@ function ContactQRPage() {
         "Create a free Contact QR code with QRForge. Add name, company, phone, email and website to generate a downloadable vCard QR code."
       );
     }
+    const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
+
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/contact-qr-code-generator"
+  );
+}
 
     return () => {
       document.title =
@@ -34,6 +44,12 @@ function ContactQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 

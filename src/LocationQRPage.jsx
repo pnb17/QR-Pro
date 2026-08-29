@@ -19,7 +19,16 @@ function LocationQRPage() {
         "Create a free Location QR code online with QRForge. Enter latitude and longitude, generate a Google Maps QR code instantly, and download it as PNG."
       );
     }
+const canonical = document.querySelector(
+  'link[rel="canonical"]'
+);
 
+if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/location-qr-code-generator"
+  );
+}
     return () => {
       document.title =
         "Free QR Code Generator Online | QRForge";
@@ -30,6 +39,12 @@ function LocationQRPage() {
           "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
         );
       }
+      if (canonical) {
+  canonical.setAttribute(
+    "href",
+    "https://www.qrforge.in/"
+  );
+}
     };
   }, []);
 
