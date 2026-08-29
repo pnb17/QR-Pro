@@ -13,6 +13,8 @@ import UrlQRPage from "./UrlQRPage.jsx";
 import EmailQRPage from "./EmailQRPage.jsx";
 import PhoneQRPage from "./PhoneQRPage.jsx";
 import SMSQRPage from "./SMSQRPage.jsx";
+import LocationQRPage from "./LocationQRPage.jsx";
+import ContactQRPage from "./ContactQRPage.jsx";
 import "./App.css";
 
 ReactDOM.createRoot(
@@ -47,6 +49,14 @@ ReactDOM.createRoot(
 <Route
   path="/sms-qr-code-generator"
   element={<SMSQRPage />}
+/>
+<Route
+  path="/location-qr-code-generator"
+  element={<LocationQRPage />}
+/>
+<Route
+  path="/contact-qr-code-generator"
+  element={<ContactQRPage />}
 />
       </Routes>
     </BrowserRouter>

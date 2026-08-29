@@ -2322,6 +2322,19 @@ const getDefaultLabel = (qrType) => {
     Create a free SMS QR Code
   </a>.
 </p>
+<p className="seo-tool-link">
+  Need to share a place?{" "}
+  <a href="/location-qr-code-generator">
+    Create a free Location QR Code
+  </a>.
+</p>
+
+<p className="seo-tool-link">
+  Want to share contact details?{" "}
+  <a href="/contact-qr-code-generator">
+    Create a free Contact QR Code
+  </a>.
+</p>
 
   <h2>What is a QR Code Generator?</h2>
 

@@ -1740,3 +1740,21 @@ body {
   outline: none;
   border-color: #2957b8;
 }
+/* ================= LOCATION QR GENERATOR ================= */
+
+.whatsapp-generator #location-latitude,
+.whatsapp-generator #location-longitude {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.whatsapp-generator #location-latitude:focus,
+.whatsapp-generator #location-longitude:focus {
+  outline: none;
+  border-color: #2957b8;
+}
