@@ -2283,6 +2283,13 @@ const getDefaultLabel = (qrType) => {
     websites, WhatsApp, WiFi, email, phone numbers, SMS, locations,
     contacts and more.
   </p>
+  <p className="seo-tool-link">
+  Need a QR code for WhatsApp?{" "}
+  <a href="/whatsapp-qr-code-generator">
+    Create a free WhatsApp QR Code
+  </a>
+  .
+</p>
 
   <h2>What is a QR Code Generator?</h2>
 

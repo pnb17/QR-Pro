@@ -1705,3 +1705,22 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
+/* ================= TOOL PAGE HEADER ================= */
+
+.tool-page-header {
+  padding: 20px 0 8px;
+}
+
+.tool-page-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2957b8;
+  text-decoration: none;
+}
+
+.tool-page-home-link:hover {
+  text-decoration: underline;
+}

@@ -1,7 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 
 function WhatsAppQRPage() {
+  useEffect(() => {
+  document.title =
+    "WhatsApp QR Code Generator – Free Online | QRForge";
+
+  const metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (metaDescription) {
+    metaDescription.setAttribute(
+      "content",
+      "Create a free WhatsApp QR code online with QRForge. Add your phone number and optional message, generate your QR code instantly, and download it as PNG."
+    );
+  }
+
+  return () => {
+    document.title =
+      "Free QR Code Generator Online | QRForge";
+
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        "content",
+        "Create free QR codes online with QRForge. Generate QR codes for URLs, WhatsApp, WiFi, email, phone, SMS, locations and contacts. Fast, easy and free."
+      );
+    }
+  };
+}, []);
   const [countryCode, setCountryCode] = useState("91");
 const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -38,6 +65,11 @@ const isValidPhone =
 
   return (
     <main className="container">
+    <header className="tool-page-header">
+  <a href="/" className="tool-page-home-link">
+    ← Back to QRForge
+  </a>
+</header>
       <section className="hero">
         <h1>WhatsApp QR Code Generator</h1>
 
@@ -134,6 +166,67 @@ const isValidPhone =
           )}
         </section>
       </div>
+      <section className="seo-content whatsapp-seo">
+  <h2>Free WhatsApp QR Code Generator</h2>
+  <p>
+    Create a WhatsApp QR code for free with QRForge. Add your WhatsApp
+    phone number and an optional pre-filled message, then generate a QR
+    code that people can scan to start a WhatsApp chat instantly.
+  </p>
+
+  <h2>How to Create a WhatsApp QR Code</h2>
+  <ol className="seo-steps">
+    <li>Select your country code.</li>
+    <li>Enter your WhatsApp phone number.</li>
+    <li>Add an optional pre-filled message.</li>
+    <li>Your WhatsApp QR code will be generated automatically.</li>
+    <li>Download the QR code as a PNG image.</li>
+  </ol>
+
+  <h2>Why Use a WhatsApp QR Code?</h2>
+  <p>
+    A WhatsApp QR code makes it easier for customers, friends or visitors
+    to contact you without manually typing your phone number. You can use
+    it on business cards, posters, menus, product packaging, websites and
+    marketing materials.
+  </p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div className="seo-faq">
+    <div className="seo-faq-item">
+      <h3>Is the WhatsApp QR Code Generator free?</h3>
+      <p>
+        Yes. You can create and download WhatsApp QR codes with QRForge
+        for free.
+      </p>
+    </div>
+
+    <div className="seo-faq-item">
+      <h3>Can I add a message to my WhatsApp QR code?</h3>
+      <p>
+        Yes. You can add an optional message that will appear in WhatsApp
+        when someone scans your QR code.
+      </p>
+    </div>
+
+    <div className="seo-faq-item">
+      <h3>Do users need to save my phone number first?</h3>
+      <p>
+        No. Scanning the QR code can open a WhatsApp chat without requiring
+        the user to manually save your number first.
+      </p>
+    </div>
+
+    <div className="seo-faq-item">
+      <h3>Where can I use my WhatsApp QR code?</h3>
+      <p>
+        You can use it on business cards, flyers, posters, menus, websites,
+        packaging and other promotional materials.
+      </p>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
