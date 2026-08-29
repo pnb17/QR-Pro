@@ -2290,6 +2290,13 @@ const getDefaultLabel = (qrType) => {
   </a>
   .
 </p>
+<p className="seo-tool-link">
+  Want to share your WiFi easily?{" "}
+  <a href="/wifi-qr-code-generator">
+    Create a free WiFi QR Code
+  </a>
+  .
+</p>
 
   <h2>What is a QR Code Generator?</h2>
 

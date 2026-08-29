@@ -8,6 +8,7 @@ import {
 
 import App from "./App.jsx";
 import WhatsAppQRPage from "./WhatsAppQRPage.jsx";
+import WifiQRPage from "./WifiQRPage.jsx";
 import "./App.css";
 
 ReactDOM.createRoot(
@@ -21,7 +22,12 @@ ReactDOM.createRoot(
         <Route
           path="/whatsapp-qr-code-generator"
           element={<WhatsAppQRPage />}
+          
         />
+        <Route
+  path="/wifi-qr-code-generator"
+  element={<WifiQRPage />}
+/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
