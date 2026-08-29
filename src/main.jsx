@@ -16,6 +16,7 @@ import SMSQRPage from "./SMSQRPage.jsx";
 import LocationQRPage from "./LocationQRPage.jsx";
 import ContactQRPage from "./ContactQRPage.jsx";
 import "./App.css";
+import NotFoundPage from "./NotFoundPage.jsx";
 
 ReactDOM.createRoot(
   document.getElementById("app")
@@ -58,6 +59,7 @@ ReactDOM.createRoot(
   path="/contact-qr-code-generator"
   element={<ContactQRPage />}
 />
+<Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
